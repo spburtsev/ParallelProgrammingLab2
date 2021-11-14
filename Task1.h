@@ -1,5 +1,6 @@
 #pragma once
 #include <algorithm>
+#include <chrono>
 
 void task1();
 
@@ -10,7 +11,7 @@ inline size_t countPositive0(std::array<T, S> arr)
 }
 
 template <class T, size_t S>
-inline size_t countPositive1(std::array<T, S> arr)
+size_t countPositive1(std::array<T, S> arr)
 {
 	size_t counter = 0;
 	for (auto& el : arr)
