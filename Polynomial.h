@@ -1,41 +1,12 @@
 #pragma once
 #include "Program.h"
-#include <vector>
 
-struct Polynomial
+template <class T, size_t S1, size_t S2>
+std::array<T, S1 + S2 - 1> multiply(const std::array<T, S1>& a1, const std::array<T, S2>& a2)
 {
-	int _degree = 0;
-	std::vector<double> _coefficients{};
-	
-	Polynomial() = default;
-
-	Polynomial(int degree, std::initializer_list<double> init)
-		: _degree(degree)
-		, _coefficients(init) {}
-
-	Polynomial(const Polynomial& another)
-		: _degree(another._degree)
-		, _coefficients(another._coefficients) {}
-
-	Polynomial(const Polynomial&& another)
-		: _degree(another._degree)
-		, _coefficients(another._coefficients) {}
-
-	~Polynomial() = default;
-
-};
-
-Polynomial multiply(const Polynomial& p1, const Polynomial& p2)
-{
-	size_t p1Size = p1._coefficients.size();
-	size_t p2Size = p2._coefficients.size();
-
-	size_t resultSize = p1Size * p2Size - 1;
-	Polynomial product{};
-
-	for (size_t i = 0; i < p1Size; ++i)
-		for (size_t j = 0; j < p2Size; ++j)
-			product._coefficients[i + j] += p1._coefficients[i] * p2._coefficients[j];
-
+	std::array<T, S1 + S2 - 1> product{};
+	for (size_t i = 0; i < S1; ++i)
+		for (size_t j = 0; j < S2; ++j)
+			product[i + j] += a1[i] * a2[i];
 	return product;
 }

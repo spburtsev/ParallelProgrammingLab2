@@ -5,26 +5,20 @@
 void task4();
 
 template <class T, size_t S>
-void round(std::array<T, S> arr)
+inline void round(std::array<T, S> arr)
 {
-    for (size_t i = 0; i < arr.size(); ++i)
-    {
-        arr[i] = roundf(arr[i]);
-    }
+    for (auto& el : arr)
+        el = roundf(el);
 }
 
 template <class T, size_t S>
 void optRound(std::array<T, S> arr)
 {
-    for (size_t i = 0; i < arr.size(); ++i)
+    for (auto& el : arr)
     {
-        if (arr[i] > 0)
-        {
-            arr[i] = static_cast<T>(arr[i] + 0.5);
-        }
+        if (el > 0)
+            el = static_cast<T>(el + 0.5);
         else
-        {
-            arr[i] = static_cast<T>(arr[i] - 0.5);
-        }
+            el = static_cast<T>(el - 0.5);
     }
 }

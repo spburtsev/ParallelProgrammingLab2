@@ -7,7 +7,7 @@ void task1()
 {
 	std::array<int, 1000> arr {};
 	for (auto& el : arr)
-		el = rand();
+		el = rand() - 2 * rand();
 
 	int counter = 0;
 	timePoint begin;
@@ -21,6 +21,7 @@ void task1()
 	std::cout << counter 
 		<< "\t"
 		<< std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin).count()
+		<< " ns"
 		<< std::endl;
 
 	begin = std::chrono::high_resolution_clock::now();
@@ -29,6 +30,7 @@ void task1()
 	std::cout << counter
 		<< "\t"
 		<< std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin).count()
+		<< " ns"
 		<< std::endl;
 
 	printDelimeter();

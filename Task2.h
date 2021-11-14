@@ -6,11 +6,11 @@ void task2();
 template <class T, size_t S>
 void sort(std::array<T, S>& arr)
 {
-	for	(size_t i = 0; i < S - 1; i++)
+	for	(size_t i = 0; i < arr.size() - 1; i++)
 	{
-		for (size_t j = 0; j < S - i - 1; j++)
+		for (size_t j = 0; j < arr.size() - i - 1; j++)
 		{
-			if (arr[j] > arr[j+1])
+			if (arr[j] > arr[j + 1])
 			{
 				std::swap(arr[j], arr[j + 1]);
 			}
@@ -24,10 +24,10 @@ inline void optSort(std::array<T, S>& arr)
 	size_t i = 0;
 	bool t = true;
 
-	while (t)
+	do
 	{
 		t = false;
-		for (size_t j = 0; j < S - i - 2; j++)
+		for (size_t j = 0; j < S - i - 2; ++j)
 		{
 			if (arr[j] > arr[j + 1])
 			{
@@ -36,5 +36,5 @@ inline void optSort(std::array<T, S>& arr)
 			}
 		}
 		++i;
-	}
+	} while (t);
 }
