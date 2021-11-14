@@ -16,7 +16,7 @@ void task1()
 	std::cout << "\tTask1" << std::endl;
 
 	begin = std::chrono::high_resolution_clock::now();
-	counter = countPositive0(arr);
+	counter = countPositive(arr);
 	end = std::chrono::high_resolution_clock::now();
 	std::cout << counter 
 		<< "\t"
@@ -24,7 +24,7 @@ void task1()
 		<< std::endl;
 
 	begin = std::chrono::high_resolution_clock::now();
-	counter = countPositive1(arr);
+	counter = countPositive0(arr);
 	end = std::chrono::high_resolution_clock::now();
 	std::cout << counter
 		<< "\t"

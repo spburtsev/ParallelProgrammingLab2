@@ -23,7 +23,7 @@ size_t countPositive1(std::array<T, S> arr)
 }
 
 template <class T, size_t S>
-size_t countPositive2(std::array<T, S> arr)
+size_t countPositive(std::array<T, S> arr)
 {
 	size_t counter = 0;
 	for (size_t i = 0; i < arr.size(); ++i)
@@ -33,3 +33,16 @@ size_t countPositive2(std::array<T, S> arr)
 	}
 	return counter;
 }
+
+template <class T, size_t S>
+inline size_t countPositiveOpt(std::array<T, S> arr)
+{
+	size_t counter = 0;
+	for (size_t i = 0; i < arr.size(); ++i)
+	{
+		counter += (arr[i] >> 31) + 1;
+	}
+	return counter;
+}
+
+
