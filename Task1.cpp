@@ -5,9 +5,10 @@ typedef std::chrono::high_resolution_clock::time_point timePoint;
 
 void task1()
 {
-	std::array<long, 1000> arr {};
+	std::array<int, 1000> arr {};
 	for (auto& el : arr)
 		el = rand() - 2 * rand();
+
 
 	int counter = 0;
 	timePoint begin;
