@@ -11,18 +11,6 @@ inline size_t countPositive0(std::array<T, S> arr)
 }
 
 template <class T, size_t S>
-size_t countPositive1(std::array<T, S> arr)
-{
-	size_t counter = 0;
-	for (auto& el : arr)
-	{
-		if (el > 0)
-			++counter;
-	}
-	return counter;
-}
-
-template <class T, size_t S>
 size_t countPositive(std::array<T, S> arr)
 {
 	size_t counter = 0;
