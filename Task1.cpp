@@ -5,7 +5,7 @@ typedef std::chrono::high_resolution_clock::time_point timePoint;
 
 void task1()
 {
-	std::array<int, 1000> arr {};
+	std::array<long, 1000> arr {};
 	for (auto& el : arr)
 		el = rand() - 2 * rand();
 
@@ -25,7 +25,7 @@ void task1()
 		<< std::endl;
 
 	begin = std::chrono::high_resolution_clock::now();
-	counter = countPositive0(arr);
+	counter = countPositiveOpt1(arr);
 	end = std::chrono::high_resolution_clock::now();
 	std::cout << counter
 		<< "\t"
